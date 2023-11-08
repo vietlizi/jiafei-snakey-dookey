@@ -1,4 +1,4 @@
-# snakey
+# Jiafel Snakey Dookey
 Been keen on the famous Snake game on your Nokia? Now it's here, after another thousand phototypes later
 
 # Introduction
