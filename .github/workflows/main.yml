@@ -12,12 +12,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-      name: Checkout Code # It's better to place the name above the uses for clarity
+      name: Checkout Code
       
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.x' # Ensure Python is installed
+        python-version: '3.x'
       
     - name: Install pygbag
       run: |
@@ -34,5 +34,5 @@ jobs:
     - name: Upload to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@4.1.7
       with:
-        branch: gh-pages # Ensure this is your target branch for GitHub Pages
-        folder: build/web # Adjust this path to where your build output is stored
+        branch: gh-pages
+        folder: build/web
