@@ -12,17 +12,27 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Checkout
+      name: Checkout Code # It's better to place the name above the uses for clarity
+      
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x' # Ensure Python is installed
+      
+    - name: Install pygbag
       run: |
             echo "Attempting to install pygbag"
             python -m pip install pygbag
             echo "Successfully installed pygbag"
-            echo "Attempting to build the game"
-            python -m pygbag --build $GITHUB_WORKSPACE/space_invaders/main.py
-            echo "Successfully build the game and complied to WebAssembly"
 
-    - name : "Upload to GitHub pages branch gh-pages"
+    - name: Build the game
+      run: |
+            echo "Attempting to build the game"
+            python -m pygbag --build $GITHUB_WORKSPACE/jiafei-snakey-dookey
+            echo "Successfully built the game and compiled to WebAssembly"
+      
+    - name: Upload to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@4.1.7
       with:
-        branch: gh-pages
-        folder: jiafei_snakey_dookey/build/web
+        branch: gh-pages # Ensure this is your target branch for GitHub Pages
+        folder: build/web # Adjust this path to where your build output is stored
