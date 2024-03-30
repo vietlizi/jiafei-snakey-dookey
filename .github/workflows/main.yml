@@ -38,4 +38,4 @@ jobs:
             echo "Successfully built the game and compiled to WebAssembly"
       
     - name: Upload to GitHub Pages
-      uses: JamesIves/github-pages-deploy-action@4.1.
+      uses: JamesIves/github-pages-deploy-action@4.1.7
