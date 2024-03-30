@@ -28,7 +28,7 @@ jobs:
 
     - name: Create Symbolic Link for main.py
       run: |
-        echo "Creating symbolic link from snake.py to main.py"
+        echo "Creating a symbolic link from snake.py to main.py"
         ln -s snake.py main.py
         echo "Symbolic link created"
 
@@ -42,4 +42,4 @@ jobs:
       uses: JamesIves/github-pages-deploy-action@4.1.7
       with:
         branch: gh-pages
-        folder: jiafei_snakey_dookey/web
+        folder: jiafei-snakey-dookey/build/web
